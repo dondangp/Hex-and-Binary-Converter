@@ -1,0 +1,57 @@
+//Created and owned by Don Dang
+
+#include<iostream>
+using namespace std;
+void decimalToHexValue(int A) //setting up void algorithm for conversions
+{
+int c = 0; int calc = 0; char DecimalNumHex[2]={
+'0',
+'0'
+};
+
+
+while (A != 0) {
+
+calc = A % 16;
+
+if (calc < 10) {
+
+DecimalNumHex[c] = calc + 48; c++;} //if it's less than 10 +48
+
+else {
+
+DecimalNumHex[c] = calc + 55; c++; // if not +55
+
+    
+} 
+A = A / 16; }
+
+cout<<"\n The hex value: ";
+
+for (int e = 1; e >= 0; e--) cout << DecimalNumHex[e];
+
+cout<<endl; }
+
+int main()
+
+{
+
+int specifiedBinary;
+
+cout<<"This program converts an integer to hex and binary from 0-255."<<endl;
+
+cout<<"Enter an integer value from the range of 0-255: ";
+
+cin>>specifiedBinary;
+
+int b=specifiedBinary , binaryNum[8]={0}; int d = 0;
+
+while (b > 0) {
+
+binaryNum[d] = b % 2;
+
+b = b / 2; d++; }
+
+cout<<"The binary value: ";
+
+for (int e = 7; e >= 0; e--) cout << binaryNum[e]; decimalToHexValue(specifiedBinary); }
